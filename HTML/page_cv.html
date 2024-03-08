@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="français">
+    <head>
+        <meta charset="utf-8">
+        <title>CV</title>
+
+        <style>
+            @font-face {
+                font-family: "bloody";
+                src: url("../POLICES/BLOODY.TTF");
+            }
+
+            html, body {
+                margin: 0;
+                height: 100vh;
+                overflow: auto;
+            }
+
+            body {
+                background-image: url("../PHOTOS_PAGES/cv.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 100%;
+                color: white;
+                font-weight: bold;
+            }
+
+            body::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(1, 1, 1, 0.446); 
+                z-index: -2; 
+            }
+
+            #photos {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                text-align: center;
+                margin-bottom:150px;
+            }
+
+            img{
+                width : 230px;
+                height : 260px;
+                clip-path:ellipse(50% 50%);
+            }
+
+
+            #photos div {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                margin: 50px;
+            }
+
+            #global {
+                position: relative;
+                top: 20%;
+            }
+
+            @media screen and (max-width: 800px){
+                #global {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+
+                #photos div{
+                    margin-bottom: 100px;;
+                }
+
+                #ph1{
+                    margin-right:0;
+                }
+
+                #photos div {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 20px;
+                }
+            }
+
+            button {
+                margin: 20px;
+                font-size: larger;
+                background-color: red;
+                font-family: "bloody";
+            }
+
+            #global {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+        </style>
+    </head>
+    <body style="text-align: justify;">
+        <div id="global">
+            <div id="photos">
+                <div>
+                    <a href="./cv_stephanie.html"><button>Voir le profil de Stephanie</button></a>
+                    <img src="../PHOTOS_PAGES/stephanie.jpeg">
+                </div>
+                <div>
+                    <a href="./cv_damia.html"><button>Voir le profil de Damia</button></a>
+                    <img src="../PHOTOS_PAGES/damia.png">
+                </div>
+            </div>
+            <div>
+                <a href="./accueil.html"><button>Revenir a la page d'accueil</button></a>
+            </div>
+        </div>
+    </body>
+</html>

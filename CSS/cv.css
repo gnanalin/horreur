@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "scary";
+    src: url("../POLICES/The\ Scary\ Movie.ttf Font.ttf");
+}
+
+@font-face {
+    font-family: "impact";
+    src: url("../POLICES/Impact.ttf");
+}
+
+@font-face {
+    font-family: "thombstone";
+    src: url("../POLICES/Tombstone-FREE.otf");
+}
+
+@font-face {
+    font-family: "elegant";
+    src: url("../POLICES/ELEGANT\ \ Personal\ use.ttf");
+}
+
+
+@font-face {
+    font-family: "bloody";
+    src: url("../POLICES/BLOODY.TTF");
+}
+
+html, body {
+    margin: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+body {
+    background-image: url("../PHOTOS_PAGES/cv.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(1, 1, 1, 0.446); 
+    z-index: -2; 
+}
+
+#entete {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width : 200px;
+    height : 230px;
+    clip-path:ellipse(50% 50%);
+}
+
+#general {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50%;
+}
+
+#general h1 {
+    font-family: "bloody";
+    font-size: 30px;
+}
+
+#general * {
+    font-family: monospace;
+    font-size: 15px;
+}
+
+#general * {
+    margin: 10px;
+}
+
+#contenu {
+    display: flex;
+    flex-direction: row;
+}
+
+#col1 {
+    flex: 2;
+    padding: 10px;
+    margin-right: 25px;
+    border-right: 1px solid black;
+}
+
+#col2 {
+    flex:2;
+}
+
+li {
+    margin: 10px;
+}
+
+.souscat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+p {
+    font-family: "thombstone";
+    font-size: xx-large;
+}
+
+ul {
+    font-family: "elegant";
+    font-size: x-large;
+    font-weight: 1100;
+}
+
+h2 {
+    font-family: "scary";
+    border: 6px solid black;
+}
+
+#etudes h4 {
+    font-family: "elegant";
+    font-size: xx-large;
+    text-align: center;
+    font-style: italic;
+}
+
+h4 {
+    margin: 0;
+    font-family: "impact";
+}
+
+a {
+    color:white;
+}
+
+@media screen and (max-width: 800px){
+    #contenu, #entete {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #col1 {
+        border-right: none;
+    }
+}
+
+button {
+    background-color: red;
+    font-family: "bloody";
+}

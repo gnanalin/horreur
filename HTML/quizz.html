@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="français">
+
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="../CSS/quizz.css">
+    <script type="text/javascript" src="../JS/transfert.js"></script>
+    <title>QUIZZ</title>
+</head>
+
+<body style="text-align: justify;">
+    <h1>Es-tu un(e) passionné(e) de films d'horreur ?</h1>
+    <form name="page_traitement" method="get">
+        <div class="infos_user">
+            <div>
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="user_firstname">
+            </div>
+            <div>
+                <label for="email">email :</label>
+                <input type="email" id="mail" name="user_email">
+            </div>
+        </div>
+        <div class="contenu">
+            <div>
+                <p>Q1) Dans quel film d'horreur le tournage a t-il mené au cauchemar ?</p>
+                <div>
+                    <input type="radio" name="question1" value="Shining" checked>
+                    <label for="Shining">Shining</label>
+                    <input type="radio" name="question1" value="Exorciste">
+                    <label id="c1" for="Exorciste">Exorciste</label>
+                    <input type="radio" name="question1" value="Annabelle">
+                    <label for="Annabelle">Annabelle</label>
+                    <input type="radio" name="question1" value="Conjuring">
+                    <label for="Conjuring">Conjuring</label>
+                    <img id="img1">
+                </div>
+            </div>
+            <div>
+                <p>Q2) Dans le film Amityville, quelle est l'histoire derrière la maison ?</p>
+                <div>
+                    <input type="radio" name="question2" value="assassinat" checked>
+                    <label for="assassinat">La famille a été assassinée</label>
+                    <input type="radio" name="question2" value="cimetiere">
+                    <label for="cimetiere">Maison construite sur un cimetière</label>
+                    <input type="radio" name="question2" value="rituels">
+                    <label id="c2" for="rituels">Un lieu d'ancien rituels</label>
+                    <input type="radio" name="question2" value="disparition">
+                    <label for="disparition">L'ancien propriétaire a disparu mystérieusement</label>
+                    <img id="img2">
+                </div>
+            </div>
+            <div>
+                <p>Q3) Où se trouve la poupée Annabelle qui a inspiré les films éponymes ainsi que la sage Conjuring ?
+                </p>
+                <div>
+                    <input type="radio" name="question3" value="musee_occult" checked>
+                    <label id="c3" for="musee_occult">Au Warren Occult Museum</label>
+                    <input type="radio" name="question3" value="brule">
+                    <label for="brule">Elle a été brûlée</label>
+                    <input type="radio" name="question3" value="disparu">
+                    <label for="disparu">Disparue</label>
+                    <input type="radio" name="question3" value="musee_paranormal">
+                    <label for="musee_paranormal">Au Cryptozooly & Paranormal museum</label>
+                    <img id="img3">
+                </div>
+            </div>
+            <div>
+                <p>Q4) Quel dessin animé pour enfant a eu droit à une déclinaison en véritable film d'horreur en 2023 ?
+                </p>
+                <div>
+                    <input type="radio" name="question4" value="teletubbies" checked>
+                    <label for="teletubbies">Télétubbies</label>
+                    <input type="radio" name="question4" value="Winnie">
+                    <label id="c4" for="Winnie">Winnie l'Ourson</label>
+                    <input type="radio" name="question4" value="Pokemon">
+                    <label for="Pokemon">Pokémon</label>
+                    <img id="img4">
+                </div>
+            </div>
+            <div class="poupeeP">
+                <div>
+                    <img src="../PHOTOS_PAGES/Robert.jpg">
+                </div>
+                <div>
+                    <label for="poupee">Q5) Nom de cette poupée ? :</label>
+                    <input type="text" id="poupee" name="name_poupee">
+                    <img id="img5">
+                </div>
+            </div>
+            <div>
+                <button type="button" onclick="getElements()"> Valider </button>
+                <button type="button" onclick="resetElements()"> Reset </button>
+            </div>
+        </div>
+    </form>
+    <div id="result"></div>
+    <footer>
+        <a href="accueil.html"><button>Revenir a la page d'accueil</button></a>
+    </footer>
+</body>

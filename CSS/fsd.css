@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "elegant";
+    src: url("../POLICES/ELEGANT\ \ Personal\ use.ttf");
+}
+
+html, body {
+    margin: 0;
+    height: 100vh;
+    overflow: auto;
+}
+
+body {
+    position: relative;
+    background-image: url("../PHOTOS_PAGES/fond_fds.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    color:white;
+    font-family: "elegant";
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#global {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#global_l {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.container {
+    margin: 10px;
+    height: 400px;
+    width:300px;
+}
+
+img {
+    border-radius: 10px;
+    height: 400px;
+    width:300px;
+    border: 4px solid red;
+}
+
+.image-container {
+    position: absolute;
+    z-index: 1;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    transform: rotateY(0deg);
+}
+
+.text-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    border: 4px solid red;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.text-overlay::before {
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec une opacité de 0.5 (ajustez selon vos besoins) */
+    z-index: -1; /* Place le pseudo-élément en dessous de l'image de fond */
+}
+
+.container:hover .image-container {
+    transform: rotateY(180deg);
+}
+
+.container:hover .text-overlay {
+    transform: translateY(0deg); /* Déplacer le texte vers le haut pour le rendre visible */
+}
+
+p {
+    margin: 10px;
+}
+
+button {
+    background-color: red;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 1000px){
+    #global_l {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: space-around;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+}

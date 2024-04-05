@@ -84,10 +84,44 @@ img {
     align-items: center;
 }
 
-button {
-    font-size: large;
+.contenu button {
+    font-weight: bolder;
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 100px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+}
+
+.contenu button:hover {
     background-color: red;
-    font-family: "bloody";
+}
+
+footer button{
+    font-weight: bolder;
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 100px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+footer button:hover {
+    color: white;
+    background: black;
+    border: 2px solid red;
+    text-shadow: 4px 4px 0 red, 4px 6px 0 red, 4px 8px 0 red,
+        4px 10px 0 red, 4px 12px 0 red, 4px 14px 0 red,
+        4px 16px 0 red, 4px 18px 0 red;
 }
 
 #result {

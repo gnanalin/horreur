@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>CV</title>
-
         <style>
             @font-face {
                 font-family: "bloody";
@@ -94,13 +93,31 @@
                     align-items: center;
                     margin: 20px;
                 }
-            }
+            }                                 
 
             button {
                 margin: 20px;
-                font-size: larger;
-                background-color: red;
                 font-family: "bloody";
+                font-weight: bolder;
+                display: inline-block;
+                padding: 20px 20px;
+                font-size: 20px;
+                box-sizing: border-box;
+                border: 2px solid red;
+                border-radius: 100px;
+                text-transform: uppercase;
+                background: black;
+                color: white;
+                transition: all 0.3s ease-in-out;
+            }
+
+            button:hover {
+                color: white;
+                background: black;
+                border: 2px solid red;
+                text-shadow: 4px 4px 0 red, 4px 6px 0 red, 4px 8px 0 red,
+                    4px 10px 0 red, 4px 12px 0 red, 4px 14px 0 red,
+                    4px 16px 0 red, 4px 18px 0 red;
             }
 
             #global {

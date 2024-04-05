@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    position: relative;
+    position: relative; /*très important sinon la photo ne s'adapte pas bien à la page*/
     background-image: url("../PHOTOS_PAGES/fond_fds.jpg");
     background-size: cover;
     background-position: center;
@@ -55,7 +55,7 @@ img {
 .image-container {
     position: absolute;
     z-index: 1;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /*pour laisser paraitre le texte une fois la rotation faite.*/
     transform-style: preserve-3d;
     transition: all 0.5s;
     transform: rotateY(0deg);
@@ -82,16 +82,16 @@ img {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec une opacité de 0.5 (ajustez selon vos besoins) */
-    z-index: -1; /* Place le pseudo-élément en dessous de l'image de fond */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec une opacité de 0.5*/
+    z-index: -1;
 }
 
 .container:hover .image-container {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /*pour faire la rotation sur l'axe des Y*/
 }
 
 .container:hover .text-overlay {
-    transform: translateY(0deg); /* Déplacer le texte vers le haut pour le rendre visible */
+    transform: translateY(0deg); /*Déplace le texte vers le haut pour le rendre visible */
 }
 
 p {
@@ -103,6 +103,34 @@ button {
     color: black;
     font-size: 15px;
     font-weight: bolder;
+}
+
+button:hover {
+    background-color: whitesmoke;
+}
+
+footer button {
+    font-weight: bolder;
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 100px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+footer button:hover {
+    color: white;
+    background: black;
+    border: 2px solid red;
+    /*text-shadow: décalage_x décalage_y opacité couleur*/
+    text-shadow: 4px 4px 0 red, 4px 6px 0 red, 4px 8px 0 red,
+        4px 10px 0 red, 4px 12px 0 red, 4px 14px 0 red,
+        4px 16px 0 red, 4px 18px 0 red;
 }
 
 @media screen and (max-width: 1000px){

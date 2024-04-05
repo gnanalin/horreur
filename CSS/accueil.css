@@ -1,12 +1,14 @@
+/*import police écriture*/
 @font-face {
     font-family: 'bloody';
     src: url("../POLICES/BLOODY.TTF") format('truetype');
 }
 
+/*ici, on spécifie que le body prend toute la page*/
 html, body {
-    margin: 0;
-    height: 100vh;
-    overflow: auto;
+    margin: 0; /*on ne veut pas des margin par défaut imposé par le navigateur*/
+    height: 100vh; /*100% de la hauteur de la fenêtre visible du navigateur.*/
+    overflow: auto; /*pour gérer le contenu qui dépasse*/
 }
 
 body {
@@ -15,21 +17,24 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+    font-family: "bloody";
 }
 
-body::before{
+/*pour appliquer une couche (pseudo-élément) par dessus notre image :*/
+body::before {
     content: "";
     position: absolute;
+    background-color: rgba(8, 8, 8, 0.5); 
+    z-index: -2; 
+    /*pour couvrir toute la page:*/
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(8, 8, 8, 0.5); 
-    z-index: -2; 
 }
 
 nav {
-    z-index:2000;
+    z-index:2000; /*ordre de priorité, on veut être sûre qu'aucun de nos éléments ne le masque*/
     position: sticky;
     top: 0px;
 }
@@ -63,10 +68,11 @@ li:hover {
 }
 
 svg {
-    display: none;
+    display: none; /*masqué si notre page est suffisament large*/
 }
 
-@media screen and (max-width: 1200px){
+/*gérer les redimensionnements de la fenêtre*/
+@media screen and (max-width: 1200px) {
     svg {
         display: block;
     }
@@ -109,7 +115,7 @@ svg {
     }
 
     nav:hover li:hover {
-        background-color:   white;
+        background-color:  white;
     }
 
 
@@ -117,13 +123,33 @@ svg {
 
 .texte_anime {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
+#titre {
+    font-size: 50px;
+    padding: 0;
+    opacity: 0;
+    animation: showTitre 0.5s ease-out forwards;
+}
+
+@keyframes showTitre {
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+#titre { animation-delay: 1s; transform: translateX(0) translateY(0); }
+
 p {
-    font-size: 80px;
+    font-size: 75px;
     color: red;
+    margin: 25px;
 }
 
 .texte_anime p span {
@@ -134,16 +160,21 @@ p {
     opacity: 0;
     transform-origin: center;
     animation: moveFromCorner 1s ease-out forwards;
+    /*
+    animation: nom durée commencer_rapidement_finir_lentement conserver_proprietes_de_la_fin 
+    */
 }
 
 
 @keyframes moveFromCorner {
+    /*à la fin on veut que les lettres de chaque span ne bougent plus*/
     to {
         opacity: 1;
         transform: translateX(0) translateY(0);
     }
 }
 
+/*ici, on met une animation pour chaque lettre grâce à translateX et translateY*/
 p span:nth-child(1) { animation-delay: 0.2s; transform: translateX(-100%) translateY(-100%); }
 p span:nth-child(2) { animation-delay: 0.3s; transform: translateX(100%) translateY(-100%); }
 p span:nth-child(3) { animation-delay: 0.4s; transform: translateX(-100%) translateY(100%); }
@@ -158,21 +189,21 @@ p span:nth-child(11) { animation-delay: 0.4s; transform: translateX(-100%) trans
 p span:nth-child(12) { animation-delay: 0.5s; transform: translateX(100%) translateY(100%); }
 p span:nth-child(13) { animation-delay: 0.5s; transform: translateX(100%) translateY(100%); }
 
+
+/*Dans la suite, on se focalise sur nos trois caroussels:*/
 img {
     width: 350px;
     height: 400px;
 }
 
 .images a {
+    /*les liens prendront 100% des dimensions de l'image*/
     display: inline-block;
     width: 100%; 
     height: 100%;
 }
 
 .carousel {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     z-index: 1000;
     margin-bottom:15px;
     width: 350px;
@@ -190,6 +221,7 @@ img {
     animation-iteration-count: infinite;
 }
 
+/*pour faire le défilé d'images de droite vers la gauche*/
 @keyframes mesImages {
     0% {
         transform: translateX(0);
@@ -223,6 +255,7 @@ img {
     margin-right: 80px;
 }
 
+/*pour positionner les titres en dessous des carousels:*/
 .pos_texte {
     display: flex;
     flex-direction: column;

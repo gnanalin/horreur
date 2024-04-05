@@ -65,10 +65,10 @@ function getElements(){
         document.getElementById("poupee").value = "robert"
     }
 
-    chaine_res = "<span>Ton score est de "+score+".</span><span> "
+    chaine_res = "<span>Ton score est de "+score+", </span><span> "
 
     if(score >= 4) {
-        chaine_res += prenom+" tu es imbattanle !"
+        chaine_res += prenom+" tu es imbattable !"
     }
 
     else if(score < 4 && score >= 3) {
@@ -102,10 +102,13 @@ function resetElements() {
 
 
     document.page_traitement.firstname.value = ""
-    document.page_traitement.mail.value = ""
+    document.page_traitement.email.value = ""
     document.page_traitement.poupee.value = ""
     document.page_traitement.question1.value = "Shining"
     document.page_traitement.question2.value = "assassinat"
     document.page_traitement.question3.value = "musee_occult"
     document.page_traitement.question4.value = "teletubbies"
+
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("result").style = "none";
 }

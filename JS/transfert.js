@@ -2,6 +2,15 @@ function getElements(){
     var chaine_res = ""
     var score = 0
     var prenom = document.page_traitement.firstname.value
+
+    if(prenom == ""){
+        document.getElementById("result").innerHTML = "Il faut remplir le champs prénom sinon tu ne peux pas accéder à ton score !!";
+        document.getElementById("result").style.border = "2px solid red"
+        document.getElementById("result").style.padding = "20px"
+        document.getElementById("result").scrollIntoView();
+        return;
+    }
+
     document.getElementById("img1").style.visibility = "visible"
     document.getElementById("img2").style.visibility = "visible"
     document.getElementById("img3").style.visibility = "visible"
@@ -102,7 +111,6 @@ function resetElements() {
 
 
     document.page_traitement.firstname.value = ""
-    document.page_traitement.email.value = ""
     document.page_traitement.poupee.value = ""
     document.page_traitement.question1.value = "Shining"
     document.page_traitement.question2.value = "assassinat"

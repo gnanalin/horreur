@@ -1,0 +1,356 @@
+@font-face {
+    font-family: 'Melted Monster';
+    src: url("../POLICES/Melted Monster.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'b_wrath';
+    src: url("../POLICES/b_wrath.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'hHulleah';
+    src: url("../POLICES/hHulleah.ttf") format('truetype');
+}
+html, body {
+    font-family: "hHulleah";
+    margin: 0;
+    height: 100vh;
+    overflow: auto;
+
+}
+
+body {
+    background-image: url("../PHOTOS_PAGES/Fond.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-size: 22px;
+    color: #bbb;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(8, 8, 8, 0.5); 
+    z-index: -2; 
+}
+
+h2 {
+    font-family: "Melted Monster";
+    color: red;
+    font-size: 25px;
+}
+
+.container {
+    font-family: "b_wrath";
+    width: 100%;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.image-container {
+    width: 350px;
+    height: 500px;
+}
+
+.image-container img {
+    width: 350px;
+    height: 500px;
+    border: thick double red;
+    animation-duration: 3s;
+    animation-name: translate_droite;
+    animation-iteration-count: 1;
+}
+
+@keyframes translate_droite {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+.film-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 20px;
+    width: 1400px;
+    height: 700px;
+    overflow-y: scroll;
+    background-color: rgba(31, 29, 29, 0.7);
+    scrollbar-color: red;
+    animation-duration: 3s;
+    animation-name: translate_gauche;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes translate_gauche {
+    0% {
+        transform: translateX(2000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+.actors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Pour centrer les éléments horizontalement */
+    flex-wrap: wrap; /* Pour permettre le retour à la ligne si nécessaire */
+    align-items: flex-start;
+}
+
+.actor {
+    width: 20%; /* Pour afficher 5 acteurs par ligne (100% / 5) */
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center; /* Pour centrer le contenu des acteurs */
+}
+
+
+.actor img {
+    width: 80px;
+    height: 120px;
+    border-radius: 40%;
+    border: 3px solid red; /* Marron plus foncé */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.review {
+    margin-top: 20px;
+}
+
+.movie-list {
+    display: flex; 
+}
+
+
+.recommendations {
+    display: flex; /* Utiliser Flexbox */
+    flex-direction: column;
+    justify-content: space-between; /* Espacement égal entre les éléments */
+}
+
+.recommendations_bis {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-recommendation {
+    align-items: center;
+    flex: 0 0 auto; /* Ne pas réduire la taille des éléments */
+    text-align: center; /* Centrer le contenu horizontalement */
+    margin-right: 20px; /* Espacement entre chaque recommandation */
+}
+
+.movie-recommendation:last-child {
+    margin-right: 0;
+}
+.movie-recommendation img {
+    max-width: 100px; 
+    height: 150px; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+}
+
+.trailer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.trailer h2 {
+    margin-right: 50%;
+}
+
+.img_trailer img {
+    width: 230px;
+    height: auto;
+}
+
+.img_trailer {
+    width: 230px;
+    height: 120px;
+}
+
+.img_trailer:hover { 
+    transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
+    transition: transform 0.75s ease;
+    z-index: 1000;
+}
+
+.image-container {
+    width: 320px;
+    height: 500px;
+    margin-right: 20px;
+}
+
+.image-container img {
+    width: 320px;
+    height: 500px;
+    border: thick double red;
+    animation-duration: 3s;
+    animation-name: translate_droite;
+    animation-iteration-count: 1;
+}
+
+@keyframes translate_droite {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+header {
+    background-color:rgba(1, 0, 0, 1);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    color: red;
+    animation-duration: 3s;
+    animation-name: translate_bas;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes translate_bas {
+    0% {
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@media screen and (max-width: 810px){
+    .trailer, .recommendations_bis, .actors {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .actors {
+        align-items: center;
+    }
+
+    .actor {
+        width: 50%;
+        padding: 0%;
+    }
+
+    .img_trailer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin:auto
+    }
+}
+
+@media screen and (max-width: 600px){
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .film-info {
+        margin: 20px;
+        width: 50%;
+        height: 50%;
+    }
+
+    .actor {
+        width: 50%;
+        padding: 0%;
+    }
+
+    .trailer {
+        height: 200px;
+    }
+
+    .actors {
+        align-items: center;
+    }
+
+    .img_trailer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin:auto
+    }
+
+}
+
+.rating #starg { 
+    color: #ddd;
+}
+
+.rating #starj { 
+    color: yellow; 
+} 
+
+.rating label:before { 
+    content: "\2605"; 
+    font-size: 36px; 
+} 
+
+footer button{
+    font-weight: bolder;
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 100px;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    animation-duration: 3s;
+    animation-name: translate_up;
+    animation-iteration-count: 1;
+}
+
+@keyframes translate_up {
+    0% {
+        transform: translateY(+2000px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+footer button:hover {
+    color: white;
+    background: black;
+    border: 2px solid red;
+    text-shadow: 4px 4px 0 red, 4px 6px 0 red, 4px 8px 0 red,
+        4px 10px 0 red, 4px 12px 0 red, 4px 14px 0 red,
+        4px 16px 0 red, 4px 18px 0 red;
+}
